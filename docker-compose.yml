@@ -1,0 +1,16 @@
+version: "3.3"
+services:
+
+  jupyter:
+    build: .
+    ports:
+      - 8888:8888
+      - 4040:4040
+    volumes:
+      - ./notebooks:/home/jovyan/notebooks
+      - ./datasets:/home/jovyan/datasets
+  
+  sparkdashboard:
+    image: lucacanali/spark-dashboard:v01
+    ports:
+      - 3000:3000
